@@ -8,7 +8,7 @@ class User < ApplicationRecord
   after_create :set_statistic
 
 
-  validates :first_name, presence: true, length: { minimum:  3 }, on: :update, on: :update, unless: :reset_password_token_present?
+  validates :first_name, presence: true, length: { minimum:  3 },on: :update, unless: :reset_password_token_present?
 
   has_one :user_profile
   accepts_nested_attributes_for :user_profile, reject_if: :all_blank
